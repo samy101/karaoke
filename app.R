@@ -24,7 +24,7 @@ ui <- dashboardPage(
     
     #useShinyjs(),
     
-    dashboardHeader(title = "Reverse Karaoke Search"),
+    dashboardHeader(title = "Karaoke Guess"),
     dashboardSidebar(disable = TRUE),
     dashboardBody(
         fluidRow(

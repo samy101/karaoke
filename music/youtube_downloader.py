@@ -6,11 +6,12 @@ Created on Sat Jun 27 02:58:32 2020
 """
 
 # https://spapas.github.io/2018/03/06/easy-youtube-mp3-downloading/
+import os
 import sys
 import glob
 from youtube_dl import YoutubeDL
-
 import youtube_dl
+import shutil
 
 ydl_opts = {
     'format': 'bestaudio/best',
@@ -28,8 +29,8 @@ with youtube_dl.YoutubeDL(ydl_opts) as ydl:
 
 # https://stackoverflow.com/questions/43890/crop-mp3-to-first-30-seconds
 files = glob.glob("*.mp3")
-f = files[0]
 for f in files:
+    print(f)
     try:
         f1 = f.replace(' ', '-')    
         os.rename(f, f1)    
@@ -37,4 +38,5 @@ for f in files:
         os.system(cmd)    
         shutil.move(f1, f".\orig\{f1}")
     except:
+        print('Error')
         pass
