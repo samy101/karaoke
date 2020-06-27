@@ -30,6 +30,8 @@ ui <- dashboardPage(
         fluidRow(
             box(status = "primary", align = "center",
                 
+                
+                
                 fluidRow(uiOutput('my_audio')),
                 br(),
                 fluidRow(
